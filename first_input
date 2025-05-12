@@ -1,0 +1,22 @@
+
+
+
+# hello.py
+name = input("Πώς σε λένε; ")
+print(f"Γεια σου, {name}!")
+
+
+
+1. Άνοιξε ένα τερματικό (Terminal).
+2. Δημιούργησε το αρχείο:
+
+ 
+   nano hello.py
+
+3. Τρέξε το πρόγραμμα:
+
+  
+   python3 hello.py
+ 
+
+
