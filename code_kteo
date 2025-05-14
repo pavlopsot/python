@@ -1,0 +1,50 @@
+# ΚΤΕΟ - Υπολογισμός ελέγχων και εσόδων
+
+# Τιμές ελέγχου ανά τύπο και μέλος/μη μέλος
+kostos = {
+    'F': {'melos': 70, 'mi_melos': 80},
+    'E': {'melos': 40, 'mi_melos': 50},
+    'M': {'melos': 25, 'mi_melos': 30}
+}
+
+# Αρχικοποίηση μετρητών
+plithos = {'F': 0, 'E': 0, 'M': 0}
+esoda = {'F': 0, 'E': 0, 'M': 0}
+sinolika_oximata = 0
+sinolika_esoda = 0
+arithmos_melon = 0
+arithmos_mi_melon = 0
+
+while True:
+    tipos = input("Δώσε τύπο οχήματος (F/E/M ή TELOS για τερματισμό): ").upper()
+    if tipos == "TELOS":
+        break
+    melos = input("Είναι μέλος ΚΤΕΟ; (Ναι/Όχι): ").strip().lower()
+
+    if melos == "ναι":
+        timi = kostos[tipos]['melos']
+        arithmos_melon += 1
+    else:
+        timi = kostos[tipos]['mi_melos']
+        arithmos_mi_melon += 1
+
+    plithos[tipos] += 1
+    esoda[tipos] += timi
+    sinolika_oximata += 1
+    sinolika_esoda += timi
+
+# Εμφάνιση αποτελεσμάτων ανά τύπο οχήματος
+print("\nΑποτελέσματα ανά τύπο οχήματος:")
+print(f"Φορτηγά: {plithos['F']} {esoda['F']} ευρώ")
+print(f"Επιβατικά: {plithos['E']} {esoda['E']} ευρώ")
+print(f"Μοτοσυκλέτες: {plithos['M']} {esoda['M']} ευρώ")
+
+# Συνολικά στατιστικά
+print("\nΣυνολικά αποτελέσματα:")
+print(f"Συνολικός αριθμός οχημάτων: {sinolika_oximata}")
+print(f"Συνολικά έσοδα: {sinolika_esoda} ευρώ")
+
+# Πληροφορίες μελών
+print("\nΠληροφορίες πελατών:")
+print(f"Αριθμός μελών ΚΤΕΟ: {arithmos_melon}")
+print(f"Αριθμός μη μελών ΚΤΕΟ: {arithmos_mi_melon}")
