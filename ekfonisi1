@@ -83,3 +83,30 @@ for i in range(2, 11):
 
 print("Ο πωλητής με τις λιγότερες πωλήσεις είναι:", A[thesiMin], "με πωλήσεις:", min_sales)
 
+-------------------------------------------------------------------------------------------------
+
+# Εισαγωγή ονομάτων πωλητών και των πωλήσεών τους
+sellers = []
+sales = []
+
+for i in range(10):
+    name = input("Δώσε το όνομα του πωλητή: ")
+    amount = int(input("Δώσε το ποσό των πωλήσεων: "))
+    sellers.append(name)
+    sales.append(amount)
+
+# Υπολογισμός μέσου όρου πωλήσεων
+mean_sales = sum(sales) / len(sales)
+print(f"Ο μέσος όρος των πωλήσεων είναι: {mean_sales:.2f}")
+
+# Εύρεση πωλητή με τις περισσότερες πωλήσεις
+max_sales = max(sales)
+index_max = sales.index(max_sales)
+print(f"Ο πωλητής με τις περισσότερες πωλήσεις είναι: {sellers[index_max]} ({max_sales})")
+
+# Εύρεση πωλητή με τις λιγότερες πωλήσεις
+min_sales = min(sales)
+index_min = sales.index(min_sales)
+print(f"Ο πωλητής με τις λιγότερες πωλήσεις είναι: {sellers[index_min]} ({min_sales})")
+
+
