@@ -109,4 +109,18 @@ min_sales = min(sales)
 index_min = sales.index(min_sales)
 print(f"Ο πωλητής με τις λιγότερες πωλήσεις είναι: {sellers[index_min]} ({min_sales})")
 
+-------------------------------------------------------------------------------------------------
 
+#!/usr/bin/env python3
+num = 0
+firstDigit = 0
+secondDigit = 0
+print("Δώσε έναν αριθμό: ")
+num = input()
+if (int(num) < 10) or (int(num) > 99):
+    print("Ο αριθμός πρέπει να είναι διψήφιος.")
+else:
+    secondDigit = int(num) / 10
+    firstDigit = int(num) % 10
+    print(str(int(firstDigit)) + str(int(secondDigit)))
+    print(int(firstDigit) + int(secondDigit))
